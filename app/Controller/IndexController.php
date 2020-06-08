@@ -16,7 +16,7 @@ class IndexController extends AbstractController
 {
     public function index()
     {
-        $user = $this->request->input('user', 'Hyperf');
+        $user = $this->request->input('user', 'I love NanNan');
         $method = $this->request->getMethod();
 
         return [
