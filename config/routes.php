@@ -12,5 +12,5 @@ declare(strict_types=1);
 
 use Hyperf\HttpServer\Router\Router;
 
-//路由测试
+//路由测试1
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
