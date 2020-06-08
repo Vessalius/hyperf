@@ -14,3 +14,8 @@ use Hyperf\HttpServer\Router\Router;
 
 //路由测试4
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
+
+//ws路由
+Router::addServer('ws', function () {
+    Router::get('/', 'App\Controller\WebSocketController');
+});
