@@ -34,7 +34,7 @@ class UserController extends AbstractController
     protected $validationFactory;
 
     /**
-     * @RequestMapping(path="login", methods="get,post")
+     * @RequestMapping(path="login", methods="post")
      */
     public function login(RequestInterface $request)
     {
@@ -67,7 +67,7 @@ class UserController extends AbstractController
             ['name','=',$name],
             ['password','=',md5($password)],
         ];
-        $user = Db::table('user')->select(['id', 'fd', 'name'])->where($where)->first();
+        $user = Db::table('user')->select(['id', 'name'])->where($where)->first();
         return [
             'error' => 0,
             'data' => $user,
