@@ -14,6 +14,7 @@ namespace App\Controller;
 
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\RequestMapping;
+use Hyperf\DbConnection\Db;
 
 /**
  * Class IndexController
@@ -26,10 +27,11 @@ class IndexController extends AbstractController
     {
         $user = $this->request->input('user', 'I love NanNan');
         $method = $this->request->getMethod();
-
+        $users = Db::table('user')->first();
         return [
             'method' => $method,
             'message' => "Hello {$user}.",
+            'users' => $users
         ];
     }
 
