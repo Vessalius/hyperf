@@ -22,7 +22,7 @@ use Hyperf\Validation\Contract\ValidatorFactoryInterface;
 /**
  * Class IndexController
  * @package App\Controller
- * @Controller(prefix="/api")
+ * @Controller(prefix="/api/user")
  */
 class UserController extends AbstractController
 {
