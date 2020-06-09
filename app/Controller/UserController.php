@@ -34,7 +34,7 @@ class UserController extends AbstractController
     protected $validationFactory;
 
     /**
-     * @RequestMapping(path="login", methods="post")
+     * @RequestMapping(path="login", methods="get,post")
      */
     public function login(RequestInterface $request)
     {
