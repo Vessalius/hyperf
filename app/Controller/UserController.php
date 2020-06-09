@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Request\LoginRequest;
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\RequestMapping;
 use Hyperf\DbConnection\Db;
@@ -24,17 +25,19 @@ use Hyperf\DbConnection\Db;
 class UserController extends AbstractController
 {
     /**
-     * @RequestMapping(path="", methods="post")
+     * @RequestMapping(path="login", methods="get,post")
      */
-    public function index()
+    public function login(LoginRequest $request)
     {
         $user = $this->request->input('user');
         $password = $this->request->input('password');
-        $method = $this->request->getMethod();
+        $validated = $request->validated();
+        print_r($validated);
+//        Db::table('user')->where('')
 
-        return [
-            'method' => $method,
-            'message' => "Hello {$user}.",
-        ];
+//        return [
+//            'method' => $method,
+//            'message' => "Hello {$user}.",
+//        ];
     }
 }
