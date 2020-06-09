@@ -67,7 +67,7 @@ class UserController extends AbstractController
             ['name','=',$name],
             ['password','=',md5($password)],
         ];
-        $user = Db::table('user')->where($where)->first();
+        $user = Db::table('user')->select(['id', 'fd', 'name'])->where($where)->first();
         return [
             'error' => 0,
             'data' => $user,
