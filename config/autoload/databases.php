@@ -19,7 +19,7 @@ return [
         'username' => env('DB_USERNAME', 'root'),
         'password' => env('DB_PASSWORD', 'TYsky5203344!'),
         'charset' => env('DB_CHARSET', 'utf8mb4'),
-        'collation' => env('DB_COLLATION', 'utf8_general_ci'),
+        'collation' => env('DB_COLLATION', 'utf8mb4_general_ci'),
         'prefix' => env('DB_PREFIX', 'tb_'),
         'pool' => [
             'min_connections' => 1,
